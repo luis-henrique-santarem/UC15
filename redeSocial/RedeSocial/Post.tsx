@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, Button} from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
-export default function Post(props: { texto: string; imagem: string; title: string }) {
+export default function Post(props: { texto: string; imagem: string; title: string;}) {
   return (
     <View style={styles.card}>
       <Image source={{ uri: props.imagem }} style={styles.imagem} />
@@ -9,49 +10,72 @@ export default function Post(props: { texto: string; imagem: string; title: stri
       <Text style={styles.texto}>{props.texto}</Text>
 
       <View style={styles.botoes}>
-        <Button
-          title="Curtir"
+        <TouchableOpacity
+          style={styles.botao}
           onPress={() => alert("Você curtiu o post!")}
-          color="#b4960fff"
-        />
-        <Button
-          title="Comentar"
+        >
+          <MaterialIcons name="favorite" size={22} color="#b4960f" />
+          <Text style={styles.botaoTexto}>Curtir</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.botao}
           onPress={() => alert("Comentar...")}
-          color="#b4960fff"
-        />
-        <Button
-          title="Compartilhar"
+        >
+          <MaterialIcons name="comment" size={22} color="#b4960f" />
+          <Text style={styles.botaoTexto}>Comentar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.botao}
           onPress={() => alert("Compartilhado!")}
-          color="#b4960fff"
-        />
+        >
+          <MaterialIcons name="share" size={22} color="#b4960f" />
+          <Text style={styles.botaoTexto}>Compartilhar</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#f1eeeede",
-    margin: 15,
-    borderRadius: 10,
+    backgroundColor: "#fff",
+    marginBottom: 20,
+    borderRadius: 16,
     padding: 15,
   },
   imagem: {
     width: "100%",
-    height: 240,
-    borderRadius: 8,
-    marginBottom: 10,
+    height: 220,
+    borderRadius: 14,
+    marginBottom: 12,
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginBottom: 8,
+    color: "#927d1dff",
   },
   texto: {
-    fontSize: 18,
-    marginBottom: 13,
+    fontSize: 16,
+    color: "#444",
+    marginBottom: 14,
+    lineHeight: 24,
+    textAlign: "justify",
   },
   botoes: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
   },
-  title: {
-    fontWeight: "bold",
-    fontSize: 23,
-    
-  }
+  botao: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+  },
+  botaoTexto: {
+    color: "#a78e1fff",
+    fontWeight: "600",
+    fontSize: 16,
+  },
 });

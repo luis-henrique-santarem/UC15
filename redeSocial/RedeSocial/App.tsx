@@ -1,5 +1,5 @@
 import React from "react";
-import {StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import Perfil from "./Perfil";
 import Post from "./Post";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
@@ -12,10 +12,10 @@ export default function App() {
           <Perfil
             nome="Carolina Beckham "
             foto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZPDUjZ7DXkIOtGBuUOeqo-ZECSuuW88SF_Q&s"
-            descricao="📸 Fotógrafa apaixonada por capturar momentos únicos
-                       ✨ Transformando histórias em imagens inesquecíveis
-                       🌍 Canoas-RS | Disponível para ensaios e eventos                  
-                       📩 Contato para bookings e parcerias"         
+            descricao="📸 Fotógrafa apaixonada por capturar momentos únicos                                                                                           
+                       ✨ Transformando histórias em imagens inesquecíveis                                                                          
+                       🌍 Canoas-RS | Disponível para ensaios e eventos                                                      
+                       📩 Contato para bookings e parcerias"
           />
           <Post
             title="Um Casamento Cheio de Amor"
@@ -56,7 +56,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#c0bda69a",
+    backgroundColor: "#f5f5f5",
   },
   safeArea: {
     flex: 1,
