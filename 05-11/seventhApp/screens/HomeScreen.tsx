@@ -1,33 +1,38 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { HomeScreenProps } from '../interface/NavigationInterfaces';
+import { HomeScreenPropBottom, HomeScreenPropDrawer, HomeScreenProps, HomeScreenPropsTop } from '../interface/NavigationInterfaces';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 
-export default function HomeScreen({ navigation }: HomeScreenProps) {
+export default function HomeScreen({ navigation }: HomeScreenPropsTop) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>miguel carlos</Text>
-      <Button
-        title="Ir para Profile"
-        onPress={() => navigation.navigate('Profile', {userId: 1})} 
-      />
+    
+      <SafeAreaView style={styles.container}>
+        <View style={styles.context}>
+      <Text style={styles.text}> Home Screen</Text>
       <Button
         title="Ir para About"
-        onPress={() => navigation.navigate('About')} 
-                  />
+        onPress={() => navigation.navigate('About')}   />
     </View>
+      </SafeAreaView>
+   
+    
   )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        backgroundColor: '#E0F7FA'
     },
     text: {
-        color: "green",
-        fontSize: 23,
-        fontWeight: "semibold"
+        color: "blue",
+        fontSize: 20,
+        fontWeight: "bold"
+    },
+    context: {
+       flex: 1,
+       justifyContent: "center",
+       alignItems: "center"
     }
 })
