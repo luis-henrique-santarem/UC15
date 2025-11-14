@@ -17,7 +17,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
-          tabBarIcon: ({ color, size, focused }) => {
+          tabBarIcon: ({ color, size, }) => {
             let iconName: any
             if (route.name === "Home") iconName = "home-outline";
             if (route.name === "Soma") iconName = "add-circle-outline";
